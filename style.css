@@ -1,0 +1,166 @@
+body {
+    font-family: "Arial", sans-serif;
+    background-color: #2d2d2d;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    scroll-behavior: smooth;
+}
+
+.container {
+    scroll-behavior: smooth;
+    max-width: 40.625rem;
+    display: grid;
+}
+
+.control {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    width: 100%;
+    max-width: 40.625rem;
+    display: flex;
+    justify-content: center;
+    z-index: 1000;
+    background-color: #2d2d2d;
+    padding: 1rem;
+}
+
+.mb-3 {
+    margin-bottom: 0 !important;
+}
+
+.image-gallery {
+    max-width: 40.625rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(12.5rem, 1fr));
+    gap: .8rem;
+}
+
+.image-container {
+    position: relative;
+    background-color: #313131;
+    border-radius: 0.8rem;
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transform: scale(0.9);
+}
+
+.image-container img.loaded {
+    opacity: 1;
+    transform: scale(1);
+}
+
+input[type="file"] {
+    display: none;
+}
+
+#loadBttn {
+    border-top-right-radius: .8rem;
+    border-bottom-right-radius: 0.8rem;
+}
+
+#uploadBttn {
+    cursor: pointer;
+    border-top-left-radius: 0.8rem;
+    border-bottom-left-radius: 0.8rem;
+}
+
+#loadMoreBttn {
+    border-radius: 0.8rem;
+}
+
+#inputColors {
+    max-width: 7.188rem;
+}
+
+input[type="text"]:focus, .form-select:focus { 
+    outline: none; 
+    box-shadow: none; 
+}
+
+.input-group-lg>.form-select, .input-group-sm>.form-select {
+    padding-right: 2rem;
+}
+
+.load-more-container {
+    display: none;
+}
+
+.load-more-container.loaded {
+    justify-content: center;
+    margin: 1rem;
+    display: flex !important;
+}
+
+.spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin: -1.25rem 0 0 -1.25rem;
+    border: 0.25rem solid rgba(0, 0, 0, 0.1);
+    border-top: 0.25rem solid #000;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media (width < 40.625rem) {
+    .image-gallery {
+        grid-template-columns: 1fr;
+    }
+    .container {
+        padding: 0 1.5rem 1.5rem 1.5rem;
+    }
+    .control {
+        padding: 1.5rem;
+    }
+    .image-gallery {
+        gap: 1rem;
+    }
+}
+
+#scrollTopBtn { 
+    width: 3.438rem;
+    height: 3.438rem;
+    display: none;
+    position: fixed;  
+    bottom: 1.5rem;
+    right: 2rem;
+    z-index: 99; 
+    font-size: 1.5rem; 
+    background-color: #555; 
+    color: white; 
+    border: none; 
+    border-radius: 25rem; 
+    cursor: pointer; 
+    transition: opacity 0.3s ease-in; 
+} 
+
+#scrollTopBtn:hover { 
+    background-color: #333; 
+}
+
+.material-symbols-outlined {
+    font-size: 2.188rem;
+    line-height: 1.5;
+}
