@@ -180,12 +180,12 @@ window.addEventListener('scroll', () => {
 // scroll to top button
 // document.getElementById("scrollTopBtn")
 
-window.addEventListener('resize', () => {
-    const inputForm = document.querySelector('.input-group');
+// window.addEventListener('resize', () => {
+//     const inputForm = document.querySelector('.input-group');
 
-    if (window.innerWidth <= 650) {
-        inputForm.classList.add('input-group-lg');
-    } else {
-        inputForm.classList.remove('input-group-lg');
-    }
-});
+//     if (window.innerWidth <= 650) {
+//         inputForm.classList.add('input-group-lg');
+//     } else {
+//         inputForm.classList.remove('input-group-lg');
+//     }
+// });
