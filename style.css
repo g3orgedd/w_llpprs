@@ -1,0 +1,263 @@
+body {
+    font-family: "Geist Mono", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    background-color: #2d2d2d;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    scroll-behavior: smooth;
+}
+
+.download-btn { 
+    width: 100%;
+    height: 2.5rem;
+    width: 30%;
+    position: absolute; 
+    right: 10px;
+    bottom: 10px; 
+    background-color: #5555552d; 
+    color: #fff; 
+    border: none; 
+    border-radius: 2rem; 
+    cursor: pointer; 
+    transition: background-color 0.3s; 
+
+    @media (max-width: 649px) { 
+        background-color: #2d2d2d;
+        width: 3rem;
+        height: 3rem;
+        width: 20%;
+    }
+} 
+
+#toTopButton { 
+    width: 24px;
+    height: 24px;
+}
+
+.download-btn:hover { 
+    background-color: #333; 
+}
+
+.container {
+    scroll-behavior: smooth;
+    max-width: 40.625rem;
+    display: grid;
+}
+
+/* .control {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    width: 100%;
+    max-width: 41rem;
+    display: flex;
+    justify-content: center;
+    z-index: 1000;
+    background-color: #2d2d2d;
+    padding: 1rem;
+} */
+
+.control {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 41rem;
+    display: flex;
+    justify-content: center;
+    z-index: 1000;
+    background-color: #2d2d2d;
+    padding: 1rem;
+    transition: top 1s ease-in-out;
+}
+
+.mb-3 {
+    margin-bottom: 0 !important;
+}
+
+.image-gallery {
+    max-width: 40.625rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(12.5rem, 1fr));
+    gap: .7em;
+}
+
+.image-container {
+    position: relative;
+    background-color: #313131;
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+.image-container .image-to-animate {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transform: scale(0.9);
+}
+
+.image-container img.loaded {
+    opacity: 1;
+    transform: scale(1);
+}
+
+input[type="file"] {
+    display: none;
+}
+
+#loadBttn {
+    border-top-right-radius: .8rem;
+    border-bottom-right-radius: .8rem;
+}
+
+#uploadBttn {
+    cursor: pointer;
+    border-top-left-radius: .8rem;
+    border-bottom-left-radius: .8rem;
+}
+
+#loadMoreBttn {
+    width: 10rem;
+    height: 2.5rem;
+    border-radius: 2rem;
+
+    @media (max-width: 768px) { 
+        height: 3rem;
+    }
+}
+
+#inputColors {
+    max-width: 7.188rem;
+}
+
+input[type="text"]:focus, .form-select:focus { 
+    outline: none; 
+    box-shadow: none; 
+}
+
+.input-group-lg>.form-select, .input-group-sm>.form-select {
+    padding-right: 2rem;
+}
+
+.load-more-container {
+    display: none;
+}
+
+.load-more-container.loaded {
+    justify-content: center;
+    margin: 1rem 0 0 0;
+    display: flex !important;
+
+    @media (min-width: 649px) { 
+        margin: 1rem 0 1rem 0;
+    }
+}
+
+.spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin: -1.25rem 0 0 -1.25rem;
+    border: 0.25rem solid rgba(0, 0, 0, 0.1);
+    border-top: 0.25rem solid #000;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media (width < 40.625rem) {
+    .image-gallery {
+        grid-template-columns: 1fr;
+    }
+    .container {
+        padding: 0 1.5rem 1.5rem 1.5rem;
+    }
+    .control {
+        padding: 1.5rem;
+    }
+    .image-gallery {
+        gap: 1rem;
+    }
+}
+
+#scrollTopBtn { 
+    width: 4.5rem;
+    height: 3rem;
+    display: none;
+    position: fixed;  
+    bottom: 1.5rem;
+    right: 2.1rem;
+    z-index: 99; 
+    background-color: #555; 
+    border: none; 
+    border-radius: 2rem; 
+    cursor: pointer; 
+    /* transition: opacity 0.3s ease-in;  */
+
+    transform: translateY(20px); /* Начальное смещение */
+    animation: fadeInUp 0.5s ease-in-out forwards; /* Анимация */
+} 
+
+#scrollTopBtn:hover { 
+    background-color: #333; 
+}
+
+.material-symbols-outlined {
+    font-size: 2.188rem;
+    line-height: 1.5;
+}
+
+option {
+    font-family: "Geist Mono", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* Анимация появления карточек */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.image-container {
+    opacity: 0; /* Начальное состояние — невидимо */
+    transform: translateY(20px); /* Начальное смещение */
+    animation: fadeInUp 0.5s ease-in-out forwards; /* Анимация */
+}
+
+/* Задержка для каждой карточки */
+/* .image-container:nth-child(1) { animation-delay: 0.1s; }
+.image-container:nth-child(2) { animation-delay: 0.2s; }
+.image-container:nth-child(3) { animation-delay: 0.3s; }
+.image-container:nth-child(4) { animation-delay: 0.4s; }
+.image-container:nth-child(5) { animation-delay: 0.5s; }
+.image-container:nth-child(6) { animation-delay: 0.6s; }
+.image-container:nth-child(7) { animation-delay: 0.7s; }
+.image-container:nth-child(8) { animation-delay: 0.8s; }
+.image-container:nth-child(9) { animation-delay: 0.9s; }
+.image-container:nth-child(10) { animation-delay: 1s; } */
