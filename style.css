@@ -17,8 +17,8 @@ body {
     height: 2.5rem;
     width: 30%;
     position: absolute; 
-    right: 10px;
-    bottom: 10px; 
+    right: 0.625rem;
+    bottom: 0.625rem; 
     background-color: #5555552d; 
     color: #fff; 
     border: none; 
@@ -26,7 +26,7 @@ body {
     cursor: pointer; 
     transition: background-color 0.3s; 
 
-    @media (max-width: 649px) { 
+    @media (max-width: 640.563rem) { 
         background-color: #2d2d2d;
         width: 3rem;
         height: 3rem;
@@ -35,8 +35,8 @@ body {
 } 
 
 #toTopButton { 
-    width: 24px;
-    height: 24px;
+    width: 1.5rem;
+    height: 1.5rem;
 }
 
 .download-btn:hover { 
@@ -129,7 +129,7 @@ input[type="file"] {
     height: 2.5rem;
     border-radius: 2rem;
 
-    @media (max-width: 768px) { 
+    @media (max-width: 48rem) { 
         height: 3rem;
     }
 }
@@ -156,7 +156,7 @@ input[type="text"]:focus, .form-select:focus {
     margin: 1rem 0 0 0;
     display: flex !important;
 
-    @media (min-width: 649px) { 
+    @media (min-width: 40.563rem) { 
         margin: 1rem 0 1rem 0;
     }
 }
@@ -212,8 +212,13 @@ input[type="text"]:focus, .form-select:focus {
     cursor: pointer; 
     /* transition: opacity 0.3s ease-in;  */
 
-    transform: translateY(20px); /* Начальное смещение */
+    transform: translateY(1.25rem); /* Начальное смещение */
     animation: fadeInUp 0.5s ease-in-out forwards; /* Анимация */
+
+    @media (max-width: 40.563rem) { 
+        width: 17%;
+        right: 2.2rem;
+    }
 } 
 
 #scrollTopBtn:hover { 
@@ -236,7 +241,7 @@ option {
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(1.25rem);
     }
     to {
         opacity: 1;
@@ -246,7 +251,7 @@ option {
 
 .image-container {
     opacity: 0; /* Начальное состояние — невидимо */
-    transform: translateY(20px); /* Начальное смещение */
+    transform: translateY(1.25rem); /* Начальное смещение */
     animation: fadeInUp 0.5s ease-in-out forwards; /* Анимация */
 }
 
