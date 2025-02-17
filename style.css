@@ -85,13 +85,13 @@ body {
     max-width: 40.625rem;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(12.5rem, 1fr));
-    gap: .7em;
+    gap: .7rem;
 }
 
 .image-container {
     position: relative;
     background-color: #313131;
-    border-radius: 1rem;
+    border-radius: 1.2rem;
     overflow: hidden;
     transition: transform 0.2s;
 }
@@ -254,15 +254,3 @@ option {
     transform: translateY(1.25rem); /* Начальное смещение */
     animation: fadeInUp 0.5s ease-in-out forwards; /* Анимация */
 }
-
-/* Задержка для каждой карточки */
-/* .image-container:nth-child(1) { animation-delay: 0.1s; }
-.image-container:nth-child(2) { animation-delay: 0.2s; }
-.image-container:nth-child(3) { animation-delay: 0.3s; }
-.image-container:nth-child(4) { animation-delay: 0.4s; }
-.image-container:nth-child(5) { animation-delay: 0.5s; }
-.image-container:nth-child(6) { animation-delay: 0.6s; }
-.image-container:nth-child(7) { animation-delay: 0.7s; }
-.image-container:nth-child(8) { animation-delay: 0.8s; }
-.image-container:nth-child(9) { animation-delay: 0.9s; }
-.image-container:nth-child(10) { animation-delay: 1s; } */
