@@ -217,7 +217,7 @@ input[type="text"]:focus, .form-select:focus {
 
     @media (max-width: 649px) { 
         width: 17%;
-        right: 2.2rem;
+        right: 2.15rem;
     }
 } 
 
