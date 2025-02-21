@@ -75,6 +75,9 @@ body {
     background-color: #2d2d2d;
     padding: 1rem;
     transition: top 1s ease-in-out;
+
+    opacity: 0;
+    animation: anim 2s forwards;
 }
 
 .mb-3 {
@@ -253,4 +256,9 @@ option {
     opacity: 0; /* Начальное состояние — невидимо */
     transform: translateY(1.25rem); /* Начальное смещение */
     animation: fadeInUp 0.5s ease-in-out forwards; /* Анимация */
+}
+
+@keyframes anim {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }
